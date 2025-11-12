@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dress Shop - Login</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .bg-image {
+      background-image: url('https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=1200&auto=format&fit=crop&q=80');
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      padding: .5rem 5rem;
+      box-shadow: 5px 5px 20px rgba(0,0,0,.5);
+      background: linear-gradient(to right, #151414, #333);
+    }
+
+    .login-container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: #fff;
+      color: #000;
+      border-radius: 15px;
+      width: 100%;
+      max-width: 400px;
+      box-shadow: 0px 6px 20px rgba(0,0,0,0.3);
+      padding: 40px 30px;
+    }
+
+    h3 {
+      color: #ff6600;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 25px;
+    }
+
+    .btn-custom {
+      background: #ff6600;
+      color: white;
+      border-radius: 30px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      transition: 0.3s;
+      border: none;
+    }
+
+    .btn-custom:hover {
+      background: #333;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+    .extra-text a {
+      color: #ff6600;
+      font-weight: bold;
+      text-decoration: none;
+      margin-left: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-image">
+    <!-- 🔹 Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent px-4 pt-3">
+      <a class="navbar-brand fw-bold" href="#">Dress Shop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          
+          <li class="nav-item"><a class="nav-link" href="/">Sign Up</a></li>
+          <li class="nav-item"><a class="nav-link" href="/login">Login/Register</a></li>
+          
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 🔹 Centered Login Box -->
+    <div class="login-container">
+      <div class="card">
+        <h3>Login</h3>
+       <form action="{{ url_for('login') }}" method="post">
+
+          <div class="mb-3">
+            <label>Email</label>
+            <input type="email" name="email" class="form-control" required>
+          </div>
+          <div class="mb-3">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" required>
+          </div>
+          <button type="submit" class="btn-custom">Login</button>
+        </form>
+
+
+         <div class="extra-text">
+          Already have an account?
+          <center><a href="/">signup</a></center>
+        </div>
+
+        
+            
+      </div>
+    </div>
+
+    <!-- 🔹 Footer -->
+    <footer>
+      <p>&copy; 2025 Dress Shop. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
